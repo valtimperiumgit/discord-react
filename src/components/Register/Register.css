@@ -1,0 +1,177 @@
+@font-face {
+    font-family: "Discord";
+    src: url("../../../public/fonts/980082c4328266be3342a03dcb37c432.woff2") format("woff2");
+   }
+
+* {
+ padding: 0px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@600&display=swap');
+
+.register {
+    background: url("../../images/1663665955_1-phonoteka-org-p-foni-dlya-diskorda-pinterest-1.png") no-repeat center top fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+     background-size: cover;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.register__window{
+    width: 416px;
+    height: 514px;
+    padding: 32px;
+    background-color: rgb(54,57,63);
+    border-radius: 1%;
+}
+
+.register__window__title{
+    font-weight: 600;
+    color: white;
+}
+
+.register__window__title p {
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Discord';
+    font-size: 26px;
+}
+
+.register__input
+{
+    border: none;
+   background-color: #202225;
+   height: 20px;
+   padding: 10px;
+   width: 396px;
+   margin-top: 8px;
+   font-family: 'Noto Sans', sans-serif;
+   color: rgb(199, 201, 203);
+}
+
+.register__input{
+    outline: none;
+}
+
+.register__label{
+    font-family: 'Noto Sans', sans-serif;
+    color:#B9BBBE;
+    font-size: 11px;
+    display: block;
+    text-align: left;
+}
+
+.register__select_date{
+    border: none;
+    background-color: #202225;
+    height: 40px;
+    outline: none;
+    color:#B9BBBE;
+    font-family: 'Noto Sans', sans-serif;
+    color:#B9BBBE;
+    font-size: 13px;
+    width: 122px;
+    padding-left: 5px;
+    padding-right: 5px;
+    text-align: center;
+    margin-right: 25px;
+}
+
+.register__input_container{
+    margin-top: 10px;
+}
+
+.register__birthday_container{
+    margin-top: 15px;
+}
+
+.register__birthday_container_selects{
+    width: 456px;
+    display: flex;
+    justify-content: left;
+    padding-top: 10px;
+}
+
+.register__checkbox_container{
+    margin-top: 20px;
+    display: flex;
+    justify-content: left;
+}
+
+.register__checkbox_description{
+    color: #B9BBBE;
+    font-size: 12px;
+    width: 300px;
+    text-align: left;
+    margin-left: 10px;
+}
+
+.register__checkbox{
+	-webkit-appearance: none;
+	background-color: #fafafa00;
+	border: 1px solid #858787;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
+	padding: 9px;
+	border-radius: 30%;
+	display: inline-block;
+	position: relative;
+    width: 23px;
+    height: 23px;
+}
+
+.register__checkbox, .register__checkbox:checked:active {
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+}
+
+.register__checkbox:checked {
+	background-color: rgb(88,101,242);
+	border: 1px solid #adb8c0;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1);
+	color: #99a1a7;
+}
+
+.register__checkbox:checked:after {
+	content: '\2714';
+	font-size: 14px;
+	position: absolute;
+	top: 0px;
+	left: 3px;
+	color: #ffffff;
+}
+
+.register__button{
+    font-family: 'Noto Sans', sans-serif;
+    background-color: rgb(88,101,242);
+    height: 50px;
+    padding: 10px;
+    width: 416px;
+    margin-top: 18px;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+}
+
+.register__button:hover{
+    background-color: rgb(75, 89, 244);
+}
+
+.register__link{
+    text-decoration: none;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 400px;
+    color: rgb(10,153,211);
+    font-size: 12px;
+}
+
+.register__link_container{
+    margin-top: 15px;
+    display: flex;
+    justify-content: left;
+    padding-left: 5px;
+}

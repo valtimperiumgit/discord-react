@@ -1,0 +1,23 @@
+.login {
+    background: url("../../images/1663665955_1-phonoteka-org-p-foni-dlya-diskorda-pinterest-1.png") no-repeat center top fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+     background-size: cover;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login__window{
+    width: 800px;
+    height: 550px;
+    padding: 20px;
+    background-color: rgb(54,57,63);
+}
+
+.login__window__greetings{
+    color: white;
+}
