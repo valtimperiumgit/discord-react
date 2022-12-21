@@ -1,8 +1,25 @@
 import { Field, Form, Formik, FormikProps, useFormik } from "formik";
 import { Link } from "react-router-dom";
 import "../Register/Register.css";
+import * as Yup from 'yup';
+import { registration } from "../../api/AuthorizationService";
+import { IRegistrationRequest } from "../../models/requests/IRegistrationRequest";
 
 function Register() {
+
+  const RegisterSchema = Yup.object().shape({
+      Password: Yup.string()
+      .min(6, 'Password length must be at least 6 characters!')
+      .max(15, 'Password length must be less than 15 characters!')
+      .required('Required'),
+
+      Name: Yup.string()
+      .min(3, 'Name length must be at least 3 characters!')
+      .max(15, 'Name length must be less than 15 characters!')
+      .required('Required'),
+
+      Email: Yup.string().email('Invalid email format').required('Required'),
+  });
 
     return (
       <div className="register">
@@ -12,49 +29,57 @@ function Register() {
           </div>
             <Formik
               initialValues={{
-              email: '',
-              password: '',
-              name: '',
-              year: 2000,
-              month: 10,
-              day: 2,
-              isAcceptNewsletters: true }}
-              onSubmit={(values, actions) => {
-                setTimeout(() => {
-                  alert(JSON.stringify(values, null, 2));
-                  actions.setSubmitting(false);
-                }, 1000);
+              Email: '',
+              Password: '',
+              Name: '',
+              Year: 2000,
+              Month: 10,
+              Day: 2,
+              IsAcceptNewsletters: true }}
+              validationSchema={RegisterSchema}
+              validateOnChange={false}
+              validateOnBlur={false}
+        
+              onSubmit={async (values, actions) => {
+                const request : IRegistrationRequest = {...values}
+                await registration(values)
               }}
             >
-              {(props: FormikProps<any>) => ( 
+              {({ errors, touched }) => ( 
                 <Form className="register__form">
 
                   <div className="register__input_container">
-                  <label className="register__label" htmlFor="email">E-MAIL</label>
-                  <Field className="register__input" type="email" name="email" />
+                  <label className="register__label" htmlFor="email">E-MAIL {(errors.Email && touched.Email) ? (
+                  <span>{errors.Email}</span>
+                  ) : null}</label> 
+                  <Field className="register__input" type="email" name="Email" />
                   </div>
 
                   <div className="register__input_container">
-                  <label className="register__label" htmlFor="name">NAME</label>
-                  <Field className="register__input" type="text" name="name" />
+                  <label className="register__label" htmlFor="name">NAME {(errors.Name && touched.Name) ? (
+                  <span>{errors.Name}</span>
+                  ) : null}</label>
+                  <Field className="register__input" type="text" name="Name" />
                   </div>
 
                   <div className="register__input_container">
-                  <label className="register__label" htmlFor="password">PASSWORD</label>
-                  <Field className="register__input" type="password" name="password" />
+                  <label className="register__label" htmlFor="password">PASSWORD {(errors.Password && touched.Password) ? (
+                  <span>{errors.Password}</span>
+                  ) : null}</label>
+                  <Field className="register__input" type="password" name="Password" />
                   </div>
 
                   <div className="register__birthday_container">
                     <label className="register__label">BIRTHDAY</label>
                     <div className="register__birthday_container_selects">
-                      <Field className="register__select_date" as="select" name="year">
-                        <option value="2000">2000</option>
-                        <option value="2001" selected>2001</option>
+                      <Field className="register__select_date" as="select" name="Year">
+                        <option value="2000" selected>2000</option>
+                        <option value="2001">2001</option>
                         <option value="2002">2002</option>
                       </Field>
 
-                      <Field className="register__select_date" as="select" name="month">
-                        <option value="1">January </option>
+                      <Field className="register__select_date" as="select" name="Month">
+                        <option value="1" selected>January </option>
                         <option value="2">February </option>
                         <option value="3">March</option>
                         <option value="4">April</option>
@@ -68,8 +93,8 @@ function Register() {
                         <option value="12">December</option>
                       </Field>
 
-                      <Field className="register__select_date" as="select" name="day">
-                        <option value="1">1</option>
+                      <Field className="register__select_date" as="select" name="Day">
+                        <option value="1" selected>1</option>
                         <option value="2" selected>2</option>
                         <option value="3">3</option>
                       </Field>
@@ -77,7 +102,7 @@ function Register() {
                 </div>
           
                 <div className="register__checkbox_container">
-                  <Field className="register__checkbox" type="checkbox" name="isAcceptNewsletters" />
+                  <Field className="register__checkbox" type="checkbox" name="IsAcceptNewsletters" />
                   <div className="register__checkbox_description">
                   (Optional) I don't mind receiving emails with Discord news, tips and special offers. You can unsubscribe at any time.
                   </div>

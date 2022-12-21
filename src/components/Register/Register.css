@@ -175,3 +175,7 @@
     justify-content: left;
     padding-left: 5px;
 }
+
+.register__label span{
+    color: rgb(172, 90, 90);
+}

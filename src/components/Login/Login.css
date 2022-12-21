@@ -1,3 +1,14 @@
+@font-face {
+    font-family: "Discord";
+    src: url("../../../public/fonts/980082c4328266be3342a03dcb37c432.woff2") format("woff2");
+   }
+
+* {
+ padding: 0px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@600&display=swap');
+
 .login {
     background: url("../../images/1663665955_1-phonoteka-org-p-foni-dlya-diskorda-pinterest-1.png") no-repeat center top fixed;
     -webkit-background-size: cover;
@@ -12,12 +23,100 @@
 }
 
 .login__window{
-    width: 800px;
-    height: 550px;
-    padding: 20px;
+    width: 500px;
+    height: 344px;
+    padding: 32px;
     background-color: rgb(54,57,63);
 }
 
 .login__window__greetings{
     color: white;
+}
+
+.login__window__greetings h1 {
+    font-size: 24px;
+    margin: 1px;
+}
+
+.login__window__greetings p {
+    margin: 7px;
+    font-size: 16px;
+    color: rgb(157, 157, 157);
+}
+
+.login__label{
+    font-family: 'Noto Sans', sans-serif;
+    color:#B9BBBE;
+    font-size: 11px;
+    display: flex;
+    justify-content: left;
+    margin-left: 42px;
+}
+
+.login__input
+{
+   border: none;
+   background-color: #202225;
+   height: 20px;
+   padding: 10px;
+   width: 396px;
+   margin-top: 8px;
+   font-family: 'Noto Sans', sans-serif;
+   color: rgb(199, 201, 203);
+}
+
+.login__input{
+    outline: none;
+}
+
+.login__input_container{
+    margin-top: 10px;
+}
+
+.login__link{
+    text-decoration: none;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 400px;
+    color: rgb(10,153,211);
+    font-size: 12px;
+}
+
+.login__link_container{
+    margin-top: 10px;
+    display: flex;
+    justify-content: left;
+    padding-left: 5px;
+    margin-left: 37px;
+}
+
+.login__label span{
+    color: rgb(172, 90, 90);
+    margin-left: 5px
+}
+
+.login__button{
+    font-family: 'Noto Sans', sans-serif;
+    background-color: rgb(88,101,242);
+    height: 50px;
+    padding: 10px;
+    width: 416px;
+    margin-top: 18px;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+}
+
+.login__link_container span{
+    color: #ffffff;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 12px;
+}
+
+.login__link_reg{
+ margin-left: 10px;
+ text-decoration: none;
+ font-family: 'Noto Sans', sans-serif;
+ font-weight: 400px;
+ color: rgb(10,153,211);
+ font-size: 12px;
 }
