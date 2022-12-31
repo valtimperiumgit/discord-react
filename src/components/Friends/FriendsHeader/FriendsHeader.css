@@ -1,0 +1,38 @@
+.friends_header{
+    width: 100%;
+    background-color: rgb(54,57,63);
+    height: 42px;
+    border-bottom: solid 1px rgb(32,34,37);
+    display: flex;
+    align-items: center;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.tool_title{
+    width: 224px;
+    height: 42px;
+    margin-left: 12px;
+    display: flex;
+    align-items: center;
+    border-radius: 3%;
+}
+
+.tool_title_content{
+    width: 90px;
+    height: 23px;
+    padding-left: 8px;
+    padding-right: 8px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    color: rgb(174, 176, 184);
+    cursor: pointer;
+    border-right: solid 2px rgb(66,70,77);
+}
+
+.tool_title_content img{
+    width: 18px;
+    height: 18px;
+    margin-right: 12px;
+}

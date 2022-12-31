@@ -1,0 +1,37 @@
+.chat_field{
+    width: 232px;
+    display: flex;
+    justify-content: left;
+    height: 42px;
+    margin-left: 8px;
+    color: rgb(174, 176, 184);
+    cursor: pointer;
+    background-color: rgb(47,49,54);
+}
+
+.chat_field_content{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    height: 42px;
+    padding-left: 8px;
+    padding-right: 8px;
+    width: 232px;
+}
+
+.chat_field_content img{
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-right: 12px;
+}
+
+.chat_field_content_name{
+    display: flex;
+    align-items: center;
+}
+
+.chat_field:hover{
+    background-color: rgb(60,63,69);
+    border-radius: 3%;
+}

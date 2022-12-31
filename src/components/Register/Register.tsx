@@ -1,11 +1,17 @@
 import { Field, Form, Formik, FormikProps, useFormik } from "formik";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../Register/Register.css";
 import * as Yup from 'yup';
 import { registration } from "../../api/AuthorizationService";
 import { IRegistrationRequest } from "../../models/requests/IRegistrationRequest";
+import { useAppDispatch } from "../../hooks/redux";
+import { ILoginRequest } from "../../models/requests/ILoginRequest";
+import { login } from "../../store/redusers/slices/AuthorizationSlice";
 
 function Register() {
+
+  let dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   const RegisterSchema = Yup.object().shape({
       Password: Yup.string()
@@ -41,8 +47,11 @@ function Register() {
               validateOnBlur={false}
         
               onSubmit={async (values, actions) => {
-                const request : IRegistrationRequest = {...values}
+                const request : IRegistrationRequest = {...values};
+                const loginRequest : ILoginRequest = {Email: values.Email, Password: values.Password};
                 await registration(values)
+                .then(() => dispatch(login(request)))
+                .then(() => navigate('/'))
               }}
             >
               {({ errors, touched }) => ( 

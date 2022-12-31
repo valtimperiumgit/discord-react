@@ -1,0 +1,36 @@
+.icon {
+    width: 72px;
+    height: 48px;
+    margin-bottom: 8px;
+    position: relative;
+}
+
+.image {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.icon :hover{
+    border-radius: 35%;
+}
+
+.image_active{
+    width: 48px;
+    height: 48px;
+    border-radius: 35%;
+    cursor: pointer;
+}
+
+.separator{
+    width: 32px;
+    height: 2px;
+    background-color: rgb(55,58,63);
+}
+
+.separator_container{
+    width: 72px;
+    display: flex;
+    justify-content: center;
+}

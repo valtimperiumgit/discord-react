@@ -17,7 +17,6 @@ export const login = createAsyncThunk(
     'authorization/login',
     async (request: ILoginRequest) => {
       const response = await loginApi(request);
-      console.log(response);
       return response;
     })
 
@@ -27,7 +26,11 @@ export const authorizationSlice = createSlice({
     reducers: {
         setAuthorized(state, action : PayloadAction<boolean>){
           state.isAuthorized = action.payload;
-          console.log(action.payload)
+        },
+
+        logout(state){
+          localStorage.removeItem("Token");
+          state.isAuthorized = false;
         }
     },
     extraReducers: (builder) => {

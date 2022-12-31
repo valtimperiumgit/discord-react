@@ -1,0 +1,34 @@
+.content{
+    width: 240px;
+    background-color: rgb(47,49,54);
+}
+
+@font-face {
+    font-family: "Discord";
+    src: url("../../../public/fonts/980082c4328266be3342a03dcb37c432.woff2") format("woff2");
+   }
+
+* {
+ padding: 0px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@600&display=swap');
+
+.private_messages_title_container{
+    width: 206px;
+    height: 18px;
+    padding-left: 18px;
+    padding-top: 18px;
+    padding-bottom: 4px;
+    padding-right: 8px;
+    color: rgb(174, 176, 184);
+    font-size: 11px;
+    font-family: 'Noto Sans', sans-serif;
+    position: relative;
+    
+}
+
+.private_messages_title{
+    display: flex;
+    justify-content: left;
+}

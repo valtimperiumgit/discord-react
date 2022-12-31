@@ -1,0 +1,33 @@
+.tool{
+    width: 224px;
+    height: 42px;
+    margin-left: 12px;
+    display: flex;
+    border-radius: 3%;
+}
+
+.tool:hover{
+    background-color: rgb(60,63,69);
+}
+
+.tool_content{
+    width: 200px;
+    height: 42px;
+    padding-left: 8px;
+    padding-right: 8px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    color: rgb(174, 176, 184);
+    cursor: pointer;
+}
+
+.tool_content img{
+    width: 18px;
+    height: 18px;
+    margin-right: 12px;
+}
+
+.link{
+    text-decoration: none;
+}

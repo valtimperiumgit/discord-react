@@ -1,0 +1,63 @@
+@font-face {
+    font-family: "Discord";
+    src: url("../../../../public/fonts/980082c4328266be3342a03dcb37c432.woff2") format("woff2");
+   }
+
+* {
+ padding: 0px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@600&display=swap');
+
+.user{
+    width: 224px;
+    height: 52px;
+    background-color: rgb(41,43,47);
+    padding-left: 8px;
+    padding-right: 8px;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+}
+
+.user_info_container{
+    display: flex;
+    width: 120px;
+    height: 39px;
+    padding-left: 2px;
+    padding-right: 2px;
+    align-items: center;
+}
+
+.user_info_container img{
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.user_info{
+    width: 76px;
+    height: 31px;
+    font-family: 'Discord';
+    padding-left: 8px;
+    padding-top: 4px;
+    padding-right: 4px;
+    margin-right: 4px;
+    
+}
+
+.user_info_name{
+    color: rgb(255,255,255);
+    font-size: 15px;
+    display: flex;
+    justify-content: left;
+}
+
+.user_info_tag{
+   color: rgb(211, 200, 202);
+   font-size: 12px;
+   display: flex;
+   justify-content: left;
+}
+
