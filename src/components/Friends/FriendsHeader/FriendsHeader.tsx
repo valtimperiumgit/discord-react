@@ -1,9 +1,13 @@
 import { useState } from "react";
+import { FriendsTabs } from "../../../models/enums/FriendsTabs";
 import "../FriendsHeader/FriendsHeader.css"
+import FriendsTab from "../FriendsTab/FriendsTab";
 
-function FriendsHeader() {
+interface FriendsHeaderProps{
+  setter: Function,
+}
 
-    const tab = useState();
+function FriendsHeader({setter} : FriendsHeaderProps) {
 
     return (
       <div className="friends_header">
@@ -13,6 +17,8 @@ function FriendsHeader() {
               <span>Friends</span>
             </div>
 
+            <FriendsTab name="All" setter={setter} value={FriendsTabs.All}/>
+            <FriendsTab name="Waiting" setter={setter} value={FriendsTabs.FriendRequests}/>
           </div>
       </div>
     );

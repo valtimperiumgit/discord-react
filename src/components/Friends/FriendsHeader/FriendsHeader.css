@@ -29,6 +29,7 @@
     color: rgb(174, 176, 184);
     cursor: pointer;
     border-right: solid 2px rgb(66,70,77);
+    margin-right: 20px;
 }
 
 .tool_title_content img{
