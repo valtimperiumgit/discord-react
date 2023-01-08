@@ -15,10 +15,7 @@ export const channelsSlice = createSlice({
     name: 'channels',
     initialState,
     reducers: {
-        // setAuthorized(state, action : PayloadAction<boolean>){
-        //   state.isAuthorized = action.payload;
-        //   console.log(action.payload)
-        // }
+
     },
     extraReducers: (builder) => {
 

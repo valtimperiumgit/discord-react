@@ -1,0 +1,56 @@
+@font-face {
+    font-family: "Discord";
+    src: url("../../../../public/fonts/980082c4328266be3342a03dcb37c432.woff2") format("woff2");
+   }
+
+* {
+ padding: 0px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@600&display=swap');
+
+.add_friend_title{
+    color: aliceblue;
+}
+
+.add_friend_content{
+    padding: 20px 30px 20px 30px;
+}
+
+.add_friend_title{
+    text-align: left;
+    color:#B9BBBE;
+    font-size: 14px;
+    font-family: "Discord";
+}
+
+.add_friend_title_title{
+    color: rgb(239, 239, 240);
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 15px;
+    margin-bottom: 7px;
+    text-align: left;
+}
+
+.add_friend_form{
+    margin-top: 16px;
+    display: flex;
+    justify-content: left;
+}
+
+.add_friend_form input{
+    background-color: rgb(32,34,37);
+    border: none;
+    outline: none;
+    width: 780px;
+    height: 48px;
+    border-radius: 10px;
+    padding: 0px 12px 0px 12px;
+    color: rgb(239, 239, 240);
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.add_friend_form input:focus{
+    border: none;
+    outline: solid 1px rgb(0,175,244);
+}

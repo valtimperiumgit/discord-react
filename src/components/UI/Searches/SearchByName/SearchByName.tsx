@@ -1,11 +1,31 @@
+import { useState } from "react";
+import { IUser } from "../../../../models/entities/user/IUser";
 import "../SearchByName/SearchByName.css"
 
-function SearchByName() {
+interface SearchByNameProps{
+  items: IUser[] | undefined,
+  setter: Function,
+}
+
+function SearchByName({items, setter} : SearchByNameProps) {
+
+    let [searchValue, setSearchValue] = useState();
 
     return (
-      <div className="seatch_by_name">
-
-      </div>
+      <input className="search_by_name" 
+      type="text"
+      onChange={(e) => 
+        {
+          if(e.target.value === ""){
+            console.log(e.target.value)
+            setter(items);
+          }
+          else{
+            console.log(e.target.value)
+            setter(items?.filter(item => item.name.includes(e.target.value)))
+          }
+        }}
+      placeholder="Search" />
     );
   }
   

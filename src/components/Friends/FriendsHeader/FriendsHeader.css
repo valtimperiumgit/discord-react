@@ -37,3 +37,7 @@
     height: 18px;
     margin-right: 12px;
 }
+
+.tool_title_content span{
+    color: rgb(249, 250, 251);
+}

@@ -1,4 +1,5 @@
 export enum FriendsTabs{
     All = 1,
-    FriendRequests = 2,
+    Requests = 2,
+    Add = 3,
 }

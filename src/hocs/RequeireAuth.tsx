@@ -10,12 +10,10 @@ const RequireAuth = ({children} : any)=>{
     const navigate = useNavigate();
 
     if(localStorage.getItem("Token") === null){
-        console.log("adadwda" + " " + localStorage.getItem("Token"))
        dispatch(authorizationSlice.actions.setAuthorized(false));
     }
 
     if(!isAuthorized){
-        console.log(localStorage.getItem("Token"));
         return <Navigate to='/login' replace/>
     }
 

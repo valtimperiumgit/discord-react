@@ -26,7 +26,6 @@ export const setCurrentUsers = createAsyncThunk(
     'user/setCurrentUsers',
     async () => {
       const response = await getCurrentUsers();
-      console.log(response);
       return response;
     }) 
 

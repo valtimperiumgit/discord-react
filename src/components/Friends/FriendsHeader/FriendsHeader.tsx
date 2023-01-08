@@ -18,7 +18,8 @@ function FriendsHeader({setter} : FriendsHeaderProps) {
             </div>
 
             <FriendsTab name="All" setter={setter} value={FriendsTabs.All}/>
-            <FriendsTab name="Waiting" setter={setter} value={FriendsTabs.FriendRequests}/>
+            <FriendsTab name="Waiting" setter={setter} value={FriendsTabs.Requests}/>
+            <FriendsTab name="Add" setter={setter} value={FriendsTabs.Add}/>
           </div>
       </div>
     );

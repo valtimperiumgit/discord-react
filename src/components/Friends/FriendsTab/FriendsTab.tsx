@@ -9,8 +9,10 @@ interface FriendsTabProps{
 
 function FriendsTab({name, setter, value} : FriendsTabProps) {
 
+  let classTab = value === FriendsTabs.Add ? "friends_tab_add" : "friends_tab";
+
   return (
-    <div className="friends_tab" onClick={() => {setter(value)}}>
+    <div className={classTab} onClick={() => {setter(value)}}>
         {name}
     </div>
   );

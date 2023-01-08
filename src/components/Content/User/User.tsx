@@ -7,7 +7,6 @@ function User() {
   const user = useAppSelector(state => state.UserReducer.user);
   let dispatch = useAppDispatch();
 
-  console.log(user);
   return (
     <div className="user">
       <div className='user_info_container'>

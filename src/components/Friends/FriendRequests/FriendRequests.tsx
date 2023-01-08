@@ -4,7 +4,9 @@ function FriendRequests() {
 
     return (
       <div className="friend_requests">
-          frie
+                      <div>
+                Requests
+            </div>
       </div>
     );
   }
