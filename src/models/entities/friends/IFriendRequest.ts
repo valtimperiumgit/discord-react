@@ -1,6 +1,6 @@
-export interface IFriendRequests{
+export interface IFriendRequest{
     id: string,
     requestingId: string,
-    recevingId: string,
+    receivingId: string,
     create: Date,
 }

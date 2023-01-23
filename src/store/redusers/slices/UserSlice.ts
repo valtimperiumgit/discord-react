@@ -30,7 +30,7 @@ export const setCurrentUsers = createAsyncThunk(
     }) 
 
 export const userSlice = createSlice({
-    name: 'authorization',
+    name: 'user',
     initialState,
     reducers: {
         

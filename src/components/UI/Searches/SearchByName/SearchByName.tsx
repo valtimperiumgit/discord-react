@@ -17,11 +17,9 @@ function SearchByName({items, setter} : SearchByNameProps) {
       onChange={(e) => 
         {
           if(e.target.value === ""){
-            console.log(e.target.value)
             setter(items);
           }
           else{
-            console.log(e.target.value)
             setter(items?.filter(item => item.name.includes(e.target.value)))
           }
         }}

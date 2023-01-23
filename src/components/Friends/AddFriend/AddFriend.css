@@ -50,7 +50,47 @@
     font-family: 'Noto Sans', sans-serif;
 }
 
+
 .add_friend_form input:focus{
     border: none;
     outline: solid 1px rgb(0,175,244);
+}
+
+.add_friend_form__button{
+    position: absolute;
+    right: 180px;
+    width: 166px;
+    height: 28px;
+    padding: 2px 16px 2px 16px;
+    background-color: rgb(88,101,242);
+    color: white;
+    text-align: center;
+    border: none;
+    font-family: 'Noto Sans', sans-serif;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.add_friend_form__button:hover{
+    background-color: rgb(71,82,196);
+}
+
+.lock_button{
+    background-color: rgb(60,67,139);
+    color: rgb(138,139,145);
+    cursor: not-allowed;
+}
+
+.lock_button:hover{
+    background-color: rgb(60,67,139);
+}
+
+.add_friend_error{
+    margin-top: 13px;
+    color: rgb(215,123,125);
+    font-family: "Discord";
+    display: flex;
+    justify-content: left;
+    text-align: left;
+    font-size: 14px;
 }

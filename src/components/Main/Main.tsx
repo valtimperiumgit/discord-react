@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { useAppDispatch } from '../../hooks/redux';
 import { setChats } from '../../store/redusers/slices/ChatsSlice';
+import { setFriendRequests } from '../../store/redusers/slices/FriendsSlice';
 import { setCurrentUsers, setUser } from '../../store/redusers/slices/UserSlice';
 import Friends from '../Friends/Friends';
 import LeftMenu from '../LeftMenu/LeftMenu';
@@ -15,6 +16,7 @@ function Main() {
     dispatch(setCurrentUsers());
     dispatch(setChats());
     dispatch(setUser());
+    dispatch(setFriendRequests());
   }, [])
 
   return (

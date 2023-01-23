@@ -22,7 +22,6 @@ function FriendsFields({title} : FriendsFieldsProps) {
   }, friends);
 
   const renderFriends = () =>{ 
-    console.log(filteredFriends);
     return filteredFriends?.map(friend => <FriendField key={user?.id} user={friend}/>)
   }
 

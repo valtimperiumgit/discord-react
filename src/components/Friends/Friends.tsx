@@ -12,6 +12,7 @@ function Friends() {
 
   const [tab, setTab] = useState(FriendsTabs.All);
   let user = useAppSelector(state => state.UserReducer.user);
+  let friendRequests = useAppSelector(state => state.FriendsReducer.friendRequests);
   let friends = useAppSelector(state => state.UserReducer.currentUsers)?.filter(friend => friend.friends.includes(user?.id!));
 
   const getContentByTab = (tab : FriendsTabs) => {
@@ -20,7 +21,7 @@ function Friends() {
         return <FriendsFields title={`ALL FRIENDS - ${friends?.length}`}/>
   
       case FriendsTabs.Requests :
-        return <FriendRequests/>
+        return <FriendRequests title={`WAITING - ${friendRequests?.length}`}/>
       
       case FriendsTabs.Add :
         return <AddFriend/>
