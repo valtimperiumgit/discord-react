@@ -2,7 +2,10 @@ import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { IFriendRequest } from "../../../models/entities/friends/IFriendRequest";
 import { IUser } from "../../../models/entities/user/IUser";
 import { IAddFriendRequest } from "../../../models/requests/IAddFriendRequest";
-import { addFriend as addFriendApi, getFriendRequests, deleteFriendRequest as deleteFriendRequestApi } from "../../../api/FriendsService";
+import { addFriend as addFriendApi, 
+    getFriendRequests,
+     deleteFriendRequest as deleteFriendRequestApi,
+    acceptFriendRequest as acceptFriendRequestApi} from "../../../api/FriendsService";
 
 
 interface FriendsState {
@@ -38,11 +41,21 @@ export const deleteFriendRequest = createAsyncThunk(
        return requestId;
     })    
 
+export const acceptFriendRequest = createAsyncThunk(
+    'friends/requests/accept',
+    async (requestId: string) => {
+       await acceptFriendRequestApi(requestId);
+       return requestId;
+    })   
+
 
 export const friendsSlice = createSlice({
     name: 'friends',
     initialState,
     reducers: {
+        removeFriendRequest(state, action: PayloadAction<string>){
+            state.friendRequests = state.friendRequests?.filter((request) => request.id !== action.payload)
+        }
     },
     extraReducers: (builder) => {
         builder.addCase(setFriendRequests.fulfilled, (state, action) => { state.friendRequests = action.payload});
@@ -53,6 +66,7 @@ export const friendsSlice = createSlice({
         builder.addCase(deleteFriendRequest.fulfilled, (state, action) => {
           state.friendRequests = state.friendRequests?.filter((request) => request.id !== action.payload)
       });
+
       },
 })
 

@@ -2,7 +2,8 @@
 import { useAppDispatch, useAppSelector } from "../../../../hooks/redux";
 import { IFriendRequest } from "../../../../models/entities/friends/IFriendRequest";
 import { IUser } from "../../../../models/entities/user/IUser";
-import { deleteFriendRequest, friendsSlice } from "../../../../store/redusers/slices/FriendsSlice";
+import { acceptFriendRequest, addFriend, deleteFriendRequest, friendsSlice } from "../../../../store/redusers/slices/FriendsSlice";
+import { setCurrentUsers, userSlice } from "../../../../store/redusers/slices/UserSlice";
 import CircleButton from "../../../UI/Buttons/CircleButton/CircleButton";
 import "../FriendRequest/FriendRequest.css"
 
@@ -17,6 +18,12 @@ function FriendRequest({user, request} : IFriendRequestProps) {
 
   let deleteFR = (requestId: string) => {
     dispatch(deleteFriendRequest(requestId));
+  }
+
+  let acceptFR = (requestId: string) => {
+    dispatch(acceptFriendRequest(requestId))
+    .then(() => {dispatch(userSlice.actions.addFriendToUser(request.requestingId))})
+    .then(() => {dispatch(friendsSlice.actions.removeFriendRequest(request.id))});
   }
 
     let users = useAppSelector(state => state.UserReducer.currentUsers);
@@ -40,7 +47,7 @@ function FriendRequest({user, request} : IFriendRequestProps) {
           <div className="friend_request_buttons_container">
                 {(request.requestingId != user?.id) && <CircleButton icon="https://i.ibb.co/tbvDwmx/image.png" 
                 hoverIcon="https://i.ibb.co/BtZQHgK/image.png" 
-                callback={()=>{console.log('dadadada')}}/>}
+                callback={()=>{acceptFR(request.id)}}/>}
               
 
               <CircleButton icon="https://i.ibb.co/93SRH9M/image.png" 

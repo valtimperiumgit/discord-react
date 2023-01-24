@@ -14,7 +14,7 @@ interface FriendsFieldsProps{
 function FriendsFields({title} : FriendsFieldsProps) {
 
   let user = useAppSelector(state => state.UserReducer.user);
-  let friends = useAppSelector(state => state.UserReducer.currentUsers)?.filter(friend => friend.friends.includes(user?.id!))
+  let friends = useAppSelector(state => state.UserReducer.currentUsers)?.filter(friend => user?.friends.includes(friend.id))
   let [filteredFriends, setFilteredFriends] = useState(friends);
 
   useEffect(()=>{

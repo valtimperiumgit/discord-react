@@ -41,3 +41,11 @@ export const deleteFriendRequest = async (requestId: string) => {
 
     await axiosInstance.delete(`${API_URL}friends/requests/delete?requestId=${requestId}`, authConfig);
 }
+
+export const acceptFriendRequest = async (requestId: string) => {
+    const authConfig = {
+        headers: { Authorization: `Bearer ${localStorage.getItem("Token")}` }
+    };
+
+    await axiosInstance.post(`${API_URL}friends/requests/accept?requestId=${requestId}`, {} ,authConfig);
+}

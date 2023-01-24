@@ -33,7 +33,9 @@ export const userSlice = createSlice({
     name: 'user',
     initialState,
     reducers: {
-        
+        addFriendToUser(state, action : PayloadAction<string>){
+            state.user?.friends.push(action.payload);
+          },
     },
     extraReducers: (builder) => {
         builder.addCase(setUser.fulfilled, (state, action) => { state.user = action.payload});

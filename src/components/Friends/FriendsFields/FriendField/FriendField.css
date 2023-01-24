@@ -17,12 +17,6 @@
     border-bottom: solid 1px rgb(66,70,77);
 }
 
-.friend_field_content img{
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-}
-
 .friend_info{
     margin-left: 15px;
     display: block;
@@ -40,4 +34,19 @@
     font-family: 'Noto Sans', sans-serif;
     color:#B9BBBE;
     font-size: 12px;
+}
+
+.friend_field_buttons{
+    width: 100%;
+    margin-left: 20px;
+    display: flex;
+    justify-content: right;
+}
+
+.friend_field_content_avatar
+{
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    
 }
